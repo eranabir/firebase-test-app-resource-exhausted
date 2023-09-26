@@ -2,9 +2,7 @@ import firebase from 'firebase/compat/app'
 import 'firebase/compat/firestore'
 import 'firebase/compat/auth'
 const initFirebase = async ()=>{
-    const firebaseApp = firebase.initializeApp({
-       //paste firebase config here
-    })
+    const firebaseApp = firebase.initializeApp(JSON.parse(import.meta.env.VITE_FIREBASE_CONFIG || '{}'))
     const firestore = firebaseApp.firestore()
     const getData = async (id: string) => {
         console.log('starting query', id);
