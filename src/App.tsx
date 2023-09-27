@@ -7,7 +7,7 @@ const initFirebase = async ()=>{
     const getData = async (id: string) => {
         console.log('starting query', id);
         //collection size in db : 10440
-        const query = await firestore.collection('supportedAssets').orderBy('id').get()
+        const query = await firestore.collection('supportedAssets').get()
         console.log(query.docs.length);
         return;
     }
